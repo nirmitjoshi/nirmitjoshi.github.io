@@ -1,0 +1,96 @@
+.posts-md {
+  margin-bottom: 0px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.heading-md {
+  height: 100px;
+  margin-bottom: calc(var(--inner-padding) + 5px);
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  padding: 0px var(--body-padding);
+  box-sizing: border-box;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.details {
+  font-size: 14px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  opacity: 0.6;
+}
+
+.details svg {
+  margin-right: 2px;
+  height: 16px;
+  width: 16px;
+  stroke-width: 1.5;
+}
+
+.all-posts-md {
+  display: flex;
+  align-items: center;
+  transition: opacity 0.1s;
+}
+
+.all-posts-md:hover {
+  opacity: 0.6;
+}
+
+.content-md {
+  padding: 0px var(--body-padding) calc(var(--inner-padding) + 5px)
+    var(--body-padding);
+}
+
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3,
+.markdown-content h4,
+.markdown-content h5,
+.markdown-content h6 {
+  all: revert;
+  font-weight: normal;
+  margin: 1em 0 0.6em 0;
+}
+
+.markdown-content h1 {
+  font-size: 2em;
+}
+.markdown-content h2 {
+  font-size: 1.5em;
+}
+.markdown-content h3 {
+  font-size: 1.17em;
+}
+.markdown-content h4 {
+  font-size: 1em;
+}
+.markdown-content h5 {
+  font-size: 0.83em;
+}
+.markdown-content h6 {
+  font-size: 0.67em;
+}
+
+.markdown-content a {
+  position: relative;
+  text-decoration: underline;
+}
+
+.markdown-content a::after {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-left: 2px;
+  vertical-align: middle;
+  background: url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"%3E%3Cpath d="M18 6L7 17"%3E%3C/path%3E%3Cpath d="M8 6h10v10"%3E%3C/path%3E%3C/svg%3E')
+    no-repeat center;
+  background-size: contain;
+}

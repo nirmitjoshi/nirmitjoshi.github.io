@@ -1,0 +1,17 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout gridTemplateRows="1fr">
+  <section class="posts-md">
+    <div class="heading">
+      <div>
+        <h1>{frontmatter.title}</h1>
+      </div>
+    </div>
+    <div class="content-md markdown-content">
+      <slot />
+    </div>
+  </section>
+</BaseLayout>

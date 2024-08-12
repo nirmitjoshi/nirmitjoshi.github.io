@@ -1,0 +1,45 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout gridTemplateRows="1fr">
+  <section class="posts-md">
+    <div class="heading-md">
+      <div>
+        <h1>{frontmatter.title}</h1>
+      </div>
+      <div class="details">
+        <div>
+          Date: {
+            new Date(frontmatter.date).toLocaleDateString("en-US", {
+              day: "numeric",
+              month: "long",
+              year: "numeric",
+            })
+          }
+        </div>
+        <a href="/posts">
+          <div class="all-posts-md">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="19" y1="12" x2="5" y2="12"></line>
+              <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            All Posts
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="content-md markdown-content">
+      <slot />
+    </div>
+  </section>
+</BaseLayout>

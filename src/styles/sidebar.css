@@ -1,0 +1,53 @@
+.sidebar {
+  width: 160px;
+  display: grid;
+  grid-template-rows: 1.5fr 1fr;
+  gap: var(--body-padding);
+}
+
+nav,
+.links {
+  width: 100%;
+  display: grid;
+  box-sizing: border-box;
+  padding: var(--inner-padding) var(--inner-padding) 0px var(--inner-padding);
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-color);
+}
+
+aside a {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 16%;
+  border: 1px solid var(--border-color);
+  position: relative;
+  transition: box-shadow 0.1s;
+  margin-bottom: var(--inner-padding);
+}
+
+aside a svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 1.5;
+}
+
+aside a:hover {
+  box-shadow: 4px 4px 0px var(--border-color);
+}
+
+.number {
+  position: absolute;
+  top: 16%;
+}
+
+.text-btn {
+  position: absolute;
+  font-size: 17px;
+  bottom: 16%;
+}
+
+.text-links {
+  font-size: 17px;
+  margin-right: 2px;
+}

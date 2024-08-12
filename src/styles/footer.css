@@ -1,0 +1,56 @@
+footer {
+  margin-top: var(--inner-padding);
+  height: var(--header-size);
+  background-color: var(--bg-color);
+}
+
+.player {
+  display: flex;
+  align-items: center;
+  padding: 0 var(--inner-padding);
+  width: 100%;
+  height: var(--header-size);
+  box-sizing: border-box;
+  border: 1px solid var(--border-color);
+}
+
+.play-pause {
+  border: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+.play-pause:focus {
+  outline: none;
+}
+
+.progress-bar {
+  flex-grow: 1;
+  background-color: var(--border-color);
+  height: 2px;
+  position: relative;
+}
+
+.progress {
+  width: 30%;
+  height: 100%;
+  background-color: var(--text-color);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.song-name {
+  font-size: 14px;
+  margin-left: 15px;
+  margin-right: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

@@ -1,0 +1,123 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const posts = await Astro.glob("../pages/posts/*.md");
+
+// sort posts by date
+const sortedPosts = posts.sort(
+  (a, b) =>
+    new Date(b.frontmatter.date).getTime() -
+    new Date(a.frontmatter.date).getTime(),
+);
+
+// get the first 5 posts
+const recentPosts = sortedPosts.slice(0, 5);
+---
+
+<BaseLayout>
+  <section class="about">
+    <div class="heading">
+      <h1>About</h1>
+    </div>
+    <p>
+      Hi, I'm Nirmit Joshi currently pursuing undergrad in Information and
+      Communication Technology and minoring in Computational Data Science. I
+      like building stuff, maths, physics, rockets, and music. My tech interests
+      are all over the place so you'll find me doing a variety of things.<br
+      /><br />
+      Currently focused on becoming an excellent engineer :)
+    </p>
+  </section>
+  <section class="recent-posts">
+    <div class="posts-heading">
+      <h1>Recent Posts</h1>
+    </div>
+    {
+      recentPosts.length > 0 ? (
+        recentPosts.map((post, index) => (
+          <a href={post.url}>
+            <div
+              class={`posts ${index > 0 ? "hidden" : ""}`}
+              data-index={index}
+            >
+              <h3>{post.frontmatter.title}</h3>
+              <hr style="height:1px;width:100%;left:16px;border-width:0;color:gray;background-color:gray" />
+              <div class="description">
+                <div class="in-this-page">{post.frontmatter.description}</div>
+                <div class="date">
+                  <span>
+                    {new Date(post.frontmatter.date).toLocaleDateString(
+                      "en-US",
+                      {
+                        day: "numeric",
+                        month: "long",
+                        year: "numeric",
+                      },
+                    )}
+                  </span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M18 6L7 17" />
+                    <path d="M8 6h10v10" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </a>
+        ))
+      ) : (
+        <p>No posts found.</p>
+      )
+    }
+    <a href="/posts/">
+      <div class="all-posts">
+        <p>All posts</p>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M18 6L7 17"></path>
+          <path d="M8 6h10v10"></path>
+        </svg>
+      </div>
+    </a>
+  </section>
+</BaseLayout>
+
+<script>
+  function checkAndShowPosts() {
+    const section = document.querySelector(".recent-posts");
+    const posts = Array.from(section.querySelectorAll(".posts"));
+    const visiblePosts = posts.filter(
+      (post) => !post.classList.contains("hidden"),
+    );
+
+    if (visiblePosts.length < posts.length) {
+      const nextPost = posts[visiblePosts.length];
+      const nextPostIndex = parseInt(nextPost.getAttribute("data-index"));
+      const requiredHeight = 300 + (nextPostIndex - 1) * 100;
+
+      if (section.offsetHeight > requiredHeight) {
+        nextPost.classList.remove("hidden");
+        // Recursive call to check if we can show more posts
+        setTimeout(checkAndShowPosts, 0);
+      }
+    }
+  }
+
+  // Initial check when the page loads
+  window.addEventListener("load", checkAndShowPosts);
+
+  // Re-check on window resize
+  window.addEventListener("resize", checkAndShowPosts);
+</script>

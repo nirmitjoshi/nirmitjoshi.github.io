@@ -1,0 +1,99 @@
+:root {
+  --bg-color: rgb(7, 7, 7);
+  --text-color: rgb(255, 255, 255);
+  --border-color: rgb(131, 131, 131);
+  --header-size: 50px;
+  --body-padding: 25px;
+  --inner-padding: 20px;
+  --grid-size: 20px;
+}
+
+body {
+  margin: 0px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-family: "Space Grotesk Variable", sans-serif;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  box-sizing: border-box;
+  padding: var(--body-padding);
+  cursor: url("/assets/cursor.png"), auto;
+}
+
+.wrapper {
+  display: flex;
+  gap: var(--body-padding);
+  height: min(800px, calc(100vh - 2 * var(--body-padding)));
+  max-width: calc(820px + 160px + var(--body-padding));
+  width: 100%;
+}
+
+p {
+  margin: 0px;
+}
+
+h1 {
+  all: unset;
+  font-size: 22px;
+}
+
+h2 {
+  all: unset;
+  font-size: 20px;
+}
+
+h3 {
+  all: unset;
+  font-size: 16px;
+}
+
+a {
+  all: unset;
+  cursor: pointer;
+}
+
+/* for markdown */
+code {
+  font-family: "Space Mono", monospace;
+  background-color: #101010;
+  padding: 0.2em 0.4em;
+}
+
+pre {
+  padding: 1em;
+  overflow-x: auto;
+  background: none;
+}
+
+pre code {
+  overflow-x: auto;
+  padding: 0;
+  background: none;
+}
+
+blockquote {
+  border-left: 2px solid var(--border-color);
+  padding-left: 1em;
+  margin: 1em 0;
+  font-style: italic;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0;
+}
+
+th,
+td {
+  padding: 0.5em;
+  border: 1px solid var(--border-color);
+  text-align: left;
+}
+
+th {
+  background-color: #101010;
+}

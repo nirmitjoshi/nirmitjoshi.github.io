@@ -1,0 +1,50 @@
+---
+import "@fontsource-variable/space-grotesk";
+import "@fontsource/space-mono";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Sidebar from "../components/Sidebar.astro";
+
+import "../styles/global.css";
+import "../styles/main.css";
+import "../styles/responsive.css";
+import "../styles/posts.css";
+import "../styles/music.css";
+import "../styles/markdown.css";
+
+const { gridTemplateRows = "auto 1fr" } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Nirmit Joshi</title>
+    <link rel="icon" type="image/jpg" href="/assets/favicon.jpg" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <Sidebar />
+      <div class="main-container">
+        <Header />
+        <div class="content" style="grid-template-rows:{ gridTemplateRows };">
+          <slot />
+        </div>
+        <Footer />
+      </div>
+    </div>
+
+    <script>
+      import "../scripts/grid.js";
+    </script>
+  </body>
+</html>
+
+<style define:vars={{ gridTemplateRows }}>
+  .content {
+    grid-template-rows: var(--gridTemplateRows);
+  }
+</style>

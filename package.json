@@ -1,0 +1,21 @@
+{
+  "name": "nirmitjoshi.tech",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@fontsource-variable/space-grotesk": "^5.0.18",
+    "@fontsource/space-mono": "^5.0.20",
+    "astro": "^4.13.3"
+  },
+  "devDependencies": {
+    "prettier": "^3.3.3",
+    "prettier-plugin-astro": "^0.14.1"
+  }
+}

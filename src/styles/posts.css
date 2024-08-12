@@ -1,0 +1,81 @@
+.recent-posts {
+  margin-bottom: 0px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.posts-heading {
+  height: 45px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  padding-left: var(--body-padding);
+  box-sizing: border-box;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.posts {
+  display: flex;
+  flex-direction: column;
+  padding: 16px var(--body-padding) 0px var(--body-padding);
+  transition: box-shadow 0.1s;
+}
+
+.hidden {
+  display: none;
+}
+
+.posts:hover {
+  background-color: rgba(255, 255, 255, 0.025);
+}
+
+.description {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr auto;
+  padding: 8px 0px 16px 0px;
+}
+
+.in-this-page {
+  opacity: 0.8;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.date {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  color: var(--text-color);
+  opacity: 0.5;
+}
+
+.posts svg {
+  margin-left: 2px;
+  height: 16px;
+  width: 16px;
+  stroke-width: 1.5;
+}
+
+.all-posts {
+  display: flex;
+  align-items: center;
+  padding-left: var(--body-padding);
+  height: 40px;
+  opacity: 0.8;
+  cursor: pointer;
+  transition: background-color 0.1s;
+}
+
+.all-posts:hover {
+  background-color: rgba(255, 255, 255, 0.025);
+}
+
+.all-posts svg {
+  margin-left: 2px;
+  margin-top: 4px;
+  height: 18px;
+  width: 18px;
+  stroke-width: 1.5;
+}

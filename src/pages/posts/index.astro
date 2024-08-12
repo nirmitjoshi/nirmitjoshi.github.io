@@ -1,0 +1,58 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+const posts = await Astro.glob("../posts/*.md");
+// sort posts by date
+const sortedPosts = posts.sort(
+  (a, b) =>
+    new Date(b.frontmatter.date).getTime() -
+    new Date(a.frontmatter.date).getTime(),
+);
+---
+
+<BaseLayout gridTemplateRows="1fr">
+  <section class="recent-posts">
+    <div class="posts-heading">
+      <h1>Posts</h1>
+    </div>
+    {
+      sortedPosts.length > 0 ? (
+        sortedPosts.map((post) => (
+          <a href={post.url}>
+            <div class="posts">
+              <h3>{post.frontmatter.title}</h3>
+              <hr style="height:1px;width:100%;left:16px;border-width:0;color:gray;background-color:gray" />
+              <div class="description">
+                <div class="in-this-page">{post.frontmatter.description}</div>
+                <div class="date">
+                  <span>
+                    {new Date(post.frontmatter.date).toLocaleDateString(
+                      "en-US",
+                      {
+                        day: "numeric",
+                        month: "long",
+                        year: "numeric",
+                      },
+                    )}
+                  </span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M18 6L7 17" />
+                    <path d="M8 6h10v10" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </a>
+        ))
+      ) : (
+        <p>No posts found.</p>
+      )
+    }
+  </section>
+</BaseLayout>

@@ -1,0 +1,31 @@
+---
+import "../styles/footer.css";
+---
+
+<footer>
+  <div class="player">
+    <div class="play-pause" id="playPauseBtn">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+      </svg>
+    </div>
+    <div class="progress-bar">
+      <div class="progress" id="progressBar"></div>
+    </div>
+    <span class="song-name">Vienna - Billy Joel</span>
+  </div>
+  <audio id="audioPlayer" src="/audio/vienna.mp3"></audio>
+  <script>
+    import "../scripts/player.js";
+  </script>
+</footer>
