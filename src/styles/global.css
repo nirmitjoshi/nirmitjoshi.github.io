@@ -10,7 +10,7 @@
 
 body {
   margin: 0px;
-  height: 100vh;
+  height: 100dvh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,7 +26,7 @@ body {
 .wrapper {
   display: flex;
   gap: var(--body-padding);
-  height: min(800px, calc(100vh - 2 * var(--body-padding)));
+  height: min(800px, calc(100dvh - 2 * var(--body-padding)));
   max-width: calc(820px + 160px + var(--body-padding));
   width: 100%;
 }
