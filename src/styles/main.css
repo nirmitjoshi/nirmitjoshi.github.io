@@ -9,7 +9,7 @@
   height: min(
     800px - 2 * var(--header-size) - 2 * var(--inner-padding),
     calc(
-      100vh - 2 * var(--header-size) - 2 * var(--body-padding) - 2 *
+      100dvh - 2 * var(--header-size) - 2 * var(--body-padding) - 2 *
         var(--inner-padding)
     )
   );
