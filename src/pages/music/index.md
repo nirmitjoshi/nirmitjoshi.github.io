@@ -12,6 +12,8 @@ _whose every song is a masterpiece_
 
 - [Joji](https://music.youtube.com/channel/UCXi-Rme73-wjVK5IE78a3SQ)
 - [Tom Odell](https://music.youtube.com/channel/UCrP3Rfz32MT-OH9MZh_N9kA)
+- [Mark Ambor](https://music.youtube.com/channel/UChsABYo2M4fwQKTBgFzdo3A)
+- [Fuzii Kaze](https://music.youtube.com/channel/UCxjfYUXFwmjUCGHMeBri5_w)
 - [Radiohead](https://music.youtube.com/channel/UCr_iyUANcn9OX_yy9piYoLw)
 - [Liam Payne](https://music.youtube.com/channel/UCEcGHupZkoAPFXXQrC2W8rA)
 - [Faye Webster](https://music.youtube.com/channel/UCdKJ6iMnCsPcTDB5p510Ztg)
@@ -19,6 +21,7 @@ _whose every song is a masterpiece_
 
 ## Albums
 
+- [F1 Trillion](https://music.youtube.com/playlist?list=PLxA687tYuMWhBkBH4njwSXvU0q-HCkK8Q)
 - [Icarus Falls](https://music.youtube.com/playlist?list=OLAK5uy_kutHXOMB7rhavgRi123VoBlk3zBmWgzLQ)
 - [News Of The World](https://music.youtube.com/playlist?list=OLAK5uy_mepzJYHmqw6Ey4F8YVyHaTDex4RRO1ohE)
 - [Peace Is The Mission](https://music.youtube.com/playlist?list=OLAK5uy_kY-NNIa-vok_bm9O_NeeAx16K3junc0no)
