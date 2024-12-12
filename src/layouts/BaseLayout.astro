@@ -14,10 +14,12 @@ import "../styles/markdown.css";
 
 const { gridTemplateRows = "auto 1fr" } = Astro.props;
 const { frontmatter } = Astro.props;
+
 const defaultTitle = "Nirmit Joshi";
 const defaultDescription = "just another developer's another site";
 const defaultUrl = Astro.site;
-const defaultImage = "../assets/defaultSiteImg.png";
+const defaultImage = "/assets/defaultSiteImg.png";
+
 const metaTitle = frontmatter?.title || defaultTitle;
 const metaDescription = frontmatter?.description || defaultDescription;
 const metaUrl = frontmatter?.url ? new URL(frontmatter.url, defaultUrl) : defaultUrl.toString();
