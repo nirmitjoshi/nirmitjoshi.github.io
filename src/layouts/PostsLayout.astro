@@ -1,9 +1,17 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
+import defaultImage from "/assets/defaultSiteImg.png";
+
 const { frontmatter } = Astro.props;
+
+const seoProps = {
+  title: frontmatter.title || 'Nirmit Joshi | Posts',
+  description: frontmatter.description || 'Blog posts by Nirmit Joshi',
+  image: frontmatter.image || defaultImage
+};
 ---
 
-<BaseLayout gridTemplateRows="1fr">
+<BaseLayout gridTemplateRows="1fr" {...seoProps}>
   <section class="posts-md">
     <div class="heading-md">
       <div>

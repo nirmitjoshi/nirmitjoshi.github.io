@@ -1,6 +1,7 @@
 ---
 import "@fontsource-variable/space-grotesk";
 import "@fontsource/space-mono";
+import SEO from "../components/SEO.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Sidebar from "../components/Sidebar.astro";
@@ -12,18 +13,12 @@ import "../styles/posts.css";
 import "../styles/music.css";
 import "../styles/markdown.css";
 
-const { gridTemplateRows = "auto 1fr" } = Astro.props;
-const { frontmatter } = Astro.props;
-
-const defaultTitle = "Nirmit Joshi";
-const defaultDescription = "just another developer's another site";
-const defaultUrl = Astro.site;
-const defaultImage = "/assets/defaultSiteImg.png";
-
-const metaTitle = frontmatter?.title || defaultTitle;
-const metaDescription = frontmatter?.description || defaultDescription;
-const metaUrl = frontmatter?.url ? new URL(frontmatter.url, defaultUrl) : defaultUrl.toString();
-const metaImage = frontmatter?.image || defaultImage;
+const { 
+  title = 'Nirmit Joshi', 
+  description, 
+  image,
+  gridTemplateRows = "auto 1fr" 
+} = Astro.props;
 ---
 
 <html lang="en">
@@ -32,22 +27,13 @@ const metaImage = frontmatter?.image || defaultImage;
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-		<title>Nirmit Joshi</title>
+		/>
 
-    <meta name="description" content={metaDescription} />
-    <!-- Open Graph Tags for Facebook, LinkedIn, etc. -->
-    <meta property="og:title" content={metaTitle} />
-    <meta property="og:description" content={metaDescription} />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={metaUrl} />
-    <meta property="og:image" content={metaImage} />
-    
-    <!-- Twitter Card Tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={metaTitle} />
-    <meta name="twitter:description" content={metaDescription} />
-    <meta name="twitter:image" content={metaImage} />
+		<SEO 
+      title={title} 
+      description={description} 
+      image={image}
+    />
 
     <link rel="icon" type="image/jpg" href="/assets/favicon.jpg" />
   </head>
