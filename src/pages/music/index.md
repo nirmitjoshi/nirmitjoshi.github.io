@@ -2,6 +2,7 @@
 layout: ../../layouts/MusicLayout.astro
 title: Music
 date: 22 July 2024
+description: "nirmit's music taste"
 ---
 
 I mostly rely on youtube's algorithm (it's great btw) so this may not be relavent in a week, a month or whatever. I will try updating it ocassionally :)
