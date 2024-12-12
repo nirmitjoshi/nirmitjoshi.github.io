@@ -7,7 +7,8 @@ date: 12 August 2024
 
 ## Wubba Lubba Dub Dub
 
-![Twitter Profile](../../assets/twitterProfile.jpg)
+![Twitter Profile](../../assets/twitterProfile.jpg){style="max-width: 100%; height: auto; display: block; margin: 0 auto;"}
+
 
 > hi
 

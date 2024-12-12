@@ -1,6 +1,5 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import defaultImage from "/assets/defaultSiteImg.png";
 
 const posts = await Astro.glob("../pages/posts/*.md");
 
@@ -16,8 +15,8 @@ const recentPosts = sortedPosts.slice(0, 5);
 
 const seoProps = {
   title: 'Nirmit Joshi | Home',
-  description: 'yet another developer's another site,
-  image: defaultImage
+  description: "yet another developer's another site",
+  image: '/assets/defaultSiteImg.png'
 };
 ---
 

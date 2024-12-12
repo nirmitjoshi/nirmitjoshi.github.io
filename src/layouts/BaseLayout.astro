@@ -13,11 +13,11 @@ import "../styles/posts.css";
 import "../styles/music.css";
 import "../styles/markdown.css";
 
+const { gridTemplateRows = "auto 1fr" } = Astro.props;
 const { 
-  title = 'Nirmit Joshi', 
+  title = "Nirmit Joshi", 
   description, 
-  image,
-  gridTemplateRows = "auto 1fr" 
+  image
 } = Astro.props;
 ---
 
@@ -41,8 +41,8 @@ const {
     <div class="wrapper">
       <Sidebar />
       <div class="main-container">
-        <Header />
-        <div class="content" style="grid-template-rows:{ gridTemplateRows };">
+				<Header />
+				<div class="content" style="grid-template-rows: var(--gridTemplateRows);">
           <slot />
         </div>
         <Footer />

@@ -12,7 +12,8 @@
   "dependencies": {
     "@fontsource-variable/space-grotesk": "^5.0.18",
     "@fontsource/space-mono": "^5.0.20",
-    "astro": "^4.13.3"
+    "astro": "^4.13.3",
+    "astro-meta-tags": "^0.3.1"
   },
   "devDependencies": {
     "prettier": "^3.3.3",

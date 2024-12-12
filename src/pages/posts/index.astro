@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+
 const posts = await Astro.glob("../posts/*.md");
 // sort posts by date
 const sortedPosts = posts.sort(
