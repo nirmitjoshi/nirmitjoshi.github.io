@@ -5,7 +5,7 @@ import { handleImage } from '../scripts/imageHandler';
 const { frontmatter } = Astro.props;
 
 const seoProps = {
-  title: frontmatter.title || 'Nirmit Joshi | Music',
+  title: 'Nirmit Joshi | Music',
   description: frontmatter.description || "Nirmit's Music Taste",
   image: handleImage(frontmatter.image)
 };
