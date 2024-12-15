@@ -16,7 +16,7 @@ const {
 } = Astro.props;
 
 const siteUrl = Astro.site?.origin || 'https://nirmitjoshi.tech';
-const fullImageUrl = image;
+const fullImageUrl = image.startsWith('http') ? image : `${siteUrl}${image}`;
 ---
 
 <meta name="title" content={title} />
