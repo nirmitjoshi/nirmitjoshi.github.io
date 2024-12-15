@@ -1,16 +1,22 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
-const posts = await Astro.glob("../posts/*.md");
+const posts = import.meta.glob('../posts/*.mdx', { eager: true })
 // sort posts by date
-const sortedPosts = posts.sort(
+const sortedPosts = Object.values(posts).sort(
   (a, b) =>
     new Date(b.frontmatter.date).getTime() -
     new Date(a.frontmatter.date).getTime(),
 );
+
+const seoProps = {
+  title: 'Nirmit Joshi | Posts',
+  description: "Blog posts by Nirmit Joshi",
+  image: '/assets/defaultSiteImg.png'
+};
 ---
 
-<BaseLayout gridTemplateRows="1fr">
+<BaseLayout gridTemplateRows="1fr" {...seoProps}>
   <section class="recent-posts">
     <div class="posts-heading">
       <h1>Posts</h1>

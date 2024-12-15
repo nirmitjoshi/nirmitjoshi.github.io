@@ -1,12 +1,13 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
+import { handleImage } from '../scripts/imageHandler.js';
 
 const { frontmatter } = Astro.props;
 
 const seoProps = {
   title: frontmatter.title || 'Nirmit Joshi | Posts',
   description: frontmatter.description || 'Blog posts by Nirmit Joshi',
-  image: frontmatter.image || '/assets/defaultSiteImg.png'
+	image: handleImage(frontmatter.image)
 };
 ---
 

@@ -1,10 +1,10 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const posts = await Astro.glob("../pages/posts/*.md");
+const posts = import.meta.glob('../pages/posts/*.mdx', { eager: true })
 
 // sort posts by date
-const sortedPosts = posts.sort(
+const sortedPosts = Object.values(posts).sort(
   (a, b) =>
     new Date(b.frontmatter.date).getTime() -
     new Date(a.frontmatter.date).getTime(),
