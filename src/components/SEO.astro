@@ -12,10 +12,10 @@ const {
   image = '/assets/defaultSiteImg.png',
   canonicalURL = Astro.url.pathname
     ? new URL(Astro.url.pathname, Astro.site).toString()
-    : Astro.site?.origin || 'https://nirmitjoshi.tech',
+    : Astro.site?.origin || 'https://nirmitjoshi.github.io',
 } = Astro.props;
 
-const siteUrl = Astro.site?.origin || 'https://nirmitjoshi.tech';
+const siteUrl = Astro.site?.origin || 'https://nirmitjoshi.github.io';
 const fullImageUrl = image.startsWith('http') ? image : `${siteUrl}${image}`;
 ---
 
