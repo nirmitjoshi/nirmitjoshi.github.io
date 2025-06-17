@@ -5,7 +5,7 @@ import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
-	site: "https://nirmitjoshi.github.io",
+  site: "https://nirmitjoshi.tech",
   markdown: {
     shikiConfig: {
       theme: "vitesse-dark",
