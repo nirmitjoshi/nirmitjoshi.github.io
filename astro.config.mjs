@@ -16,7 +16,7 @@ export default defineConfig({
     }
   },
   integrations: [metaTags(), mdx()],
-	experimental: {
-    responsiveImages: true,
+	image: {
+    responsiveStyles: true,
   },
 });
