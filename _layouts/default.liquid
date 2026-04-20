@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{{ page.title }} - {{ site.title }}</title>
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+        <link rel="manifest" href="/assets/icons/site.webmanifest">
+        <link rel="stylesheet" href="/css/default.css" />
+        <meta name="description" content="{{ page.description }}">
+        <meta property="og:title" content="{{ page.title }}">
+        <meta property="og:description" content="{{ page.description }}">
+        <meta property="og:type" content="article">
+        <meta property="og:site_name" content="{{ site.title }}">
+        {% assign permalink_first = page.permalink | slice: 0, 1 %}
+        <meta property="og:url" content="{% if page.permalink == "/" %}{{ site.base_url }}/{% elsif permalink_first == "/" %}{{ site.base_url }}{{ page.permalink }}{% else %}{{ site.base_url }}/{{ page.permalink }}{% endif %}">
+        {% if page.data.image %}
+        <meta property="og:image" content="{{ site.base_url }}{{ page.data.image }}">
+        {% endif %}
+        <meta name="twitter:card" content="{% if page.data.image %}summary_large_image{% else %}summary{% endif %}">
+        <meta name="twitter:title" content="{{ page.title }}">
+        <meta name="twitter:description" content="{{ page.description }}">
+        {% if page.data.image %}
+        <meta name="twitter:image" content="{{ site.base_url }}{{ page.data.image }}">
+        {% endif %}
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <a href="/">{{ site.title }}</a>
+            </div>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/posts.html">Posts</a>
+                <a href="/about.html">About</a>
+            </nav>
+        </header>
+
+        <main role="main">
+            {% if page.collection == "posts" %}
+            <article>
+                <h1>{{ page.title }}</h1>
+                <section class="header">
+                    {% if page.published_date %}
+                    <time>{{ page.published_date | date: "%d %b, %Y" }}</time>
+                    {% endif %}
+                </section>
+                <section>
+                    {{ page.content }}
+                </section>
+            </article>
+            {% else %}
+            {{ page.content }}
+            {% endif %}
+        </main>
+
+        <footer>
+            built with <a href="https://cobalt-org.github.io/">cobalt</a>
+        </footer>
+        <script src="/js/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+        <script src="/js/copy-code.js"></script>
+    </body>
+</html>

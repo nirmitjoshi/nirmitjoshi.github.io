@@ -1,0 +1,26 @@
+source: "."
+destination: _site
+ignore: [help]
+template_extensions:
+  - md
+  - liquid
+
+site:
+  title: "Nirmit's Blog"
+  description: "Nirmit's Blog"
+  base_url: "https://nirmitjoshi.github.io"
+
+pages:
+  default:
+    layout: default.liquid
+
+posts:
+  title: "Posts"
+  description: "All posts"
+  dir: posts
+  order: Desc
+  default:
+    layout: default.liquid
+
+syntax_highlight:
+  enabled: false
