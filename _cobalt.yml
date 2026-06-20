@@ -21,6 +21,7 @@ posts:
   order: Desc
   default:
     layout: default.liquid
+    permalink: "/posts/{{ slug }}.html"
 
 syntax_highlight:
   enabled: false
