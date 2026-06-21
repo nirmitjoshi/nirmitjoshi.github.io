@@ -6,7 +6,7 @@ data:
 ---
 
 a while a go (mid 2025) i built my first keyboard, Dactyl Manuform (handwired). attached are the photos and keymaps of it.
-keymaps are not particularly optimized, though later in future i would like to create a custom layout optimized for frequency and travel especially for terminal and programming use.
+keymaps are not particularly optimized, though good enough for now.
 
 ## keeb
 
